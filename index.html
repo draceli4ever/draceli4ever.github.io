@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angelica Arriesgado | Digital Marketing Specialist</title>
+<meta name="description" content="Digital marketing specialist in social media management, content strategy, graphic design, branding, and marketing automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFFBF2; --cream2:#F7F1E6; --lav:#E6DDF7; --lav2:#D9CCF2; --lav3:#B49DE0;
+  --plum:#4B2F86; --ink:#262638; --muted:#5F5B78;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:light}
+body{background:var(--cream);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lav3);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;color:var(--plum)}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:14px}
+h3{font-size:1.35rem;margin-bottom:8px}
+.lead{max-width:60ch;color:var(--muted);margin-bottom:40px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;background:var(--plum);color:var(--cream);transition:background .2s}
+.btn:hover{background:var(--ink)}
+.btn.alt{background:transparent;color:var(--plum);border:2px solid var(--lav3)}
+.btn.alt:hover{background:var(--lav)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(255,251,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--lav)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+nav b{font-family:var(--serif);font-size:1.15rem;color:var(--plum)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem;font-weight:500}
+nav a{text-decoration:none}
+nav ul a:hover{color:var(--lav3)}
+
+/* hero */
+.hero{padding:64px 0 72px;background:linear-gradient(180deg,var(--cream) 0%,var(--lav) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);letter-spacing:-.02em;margin-bottom:18px}
+.hero h1 span{display:block;font-weight:400;font-style:italic;color:var(--lav3)}
+.role{font-size:1.25rem;font-weight:500;color:var(--plum);margin-bottom:14px}
+.hero p.pitch{max-width:50ch;color:var(--muted);margin-bottom:30px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 24px 24px;background:var(--lav2);display:grid;place-items:center;overflow:hidden;font:600 4rem var(--serif);color:var(--plum)}
+.arch img{width:100%;height:100%;object-fit:cover}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:-44px;position:relative}
+.num{background:var(--cream);border:1px solid var(--lav2);border-radius:20px;padding:24px 22px;box-shadow:0 10px 30px rgba(74,63,107,.08)}
+.num strong{display:block;font:600 2.3rem var(--serif);color:var(--plum);line-height:1.1}
+.num small{color:var(--muted);font-size:.92rem;line-height:1.4;display:block;margin-top:4px}
+
+/* about + skills */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about p+p{margin-top:14px}
+.skills{display:grid;gap:22px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--lav);color:var(--plum);padding:7px 14px;border-radius:999px;font-size:.93rem;font-weight:500}
+
+/* case studies */
+.alt-bg{background:var(--cream2)}
+.case{background:var(--cream);border:1px solid var(--lav2);border-radius:28px;padding:40px;margin-bottom:28px}
+.case:last-child{margin-bottom:0}
+.case header{margin-bottom:22px}
+.tag{display:inline-block;background:var(--lav2);color:var(--plum);padding:5px 14px;border-radius:999px;font-size:.88rem;font-weight:700;margin-bottom:12px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.cols h4{font-size:1rem;color:var(--plum);margin-bottom:6px}
+.cols p,.cols li{color:var(--muted);font-size:1rem}
+.cols ul{padding-left:18px}
+.cols li+li{margin-top:5px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px dashed var(--lav3)}
+.stats div{background:var(--lav);border-radius:14px;padding:12px 18px}
+.stats b{font:600 1.5rem var(--serif);color:var(--plum);display:block;line-height:1.2}
+.stats span{font-size:.85rem;color:var(--muted)}
+
+/* the one memorable moment: lead flow */
+.flow{display:flex;align-items:stretch;gap:0;margin:26px 0 8px;overflow-x:auto;padding-bottom:6px}
+.flow div{flex:1 0 150px;background:var(--lav);padding:16px 18px;font-size:.95rem;color:var(--plum);font-weight:500;position:relative;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%);padding-left:30px;margin-left:-8px}
+.flow div:first-child{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);padding-left:18px;margin-left:0;border-radius:14px 0 0 14px}
+.flow div:nth-child(even){background:var(--lav2)}
+.flow div:last-child{background:var(--lav3);color:var(--ink)}
+
+/* work */
+.group{margin-bottom:40px}
+.group:last-child{margin-bottom:0}
+.group p.cap{color:var(--muted);margin-bottom:18px;max-width:60ch}
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+/* Replace each .ph with <img src="images/your-file.jpg" alt="..."> keeping class="tile" */
+.tile,.ph{border-radius:18px;background:var(--lav);border:1px dashed var(--lav3);display:grid;place-items:center;text-align:center;padding:14px;color:var(--plum);font-size:.92rem;font-weight:500}
+.tile.sq{aspect-ratio:1/1}
+.tile.tall{aspect-ratio:9/16}
+img.tile{padding:0;border:0;object-fit:cover;width:100%}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc div{background:var(--cream);border:1px solid var(--lav2);border-radius:20px;padding:26px}
+.svc p{color:var(--muted);font-size:.98rem}
+
+/* contact */
+.contact{background:var(--lav);text-align:center}
+.contact p{max-width:52ch;margin:0 auto 28px;color:var(--plum)}
+.contact .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;padding:26px;font-size:.9rem;color:var(--muted);background:var(--cream)}
+
+@media(max-width:860px){
+  nav ul{display:none}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .arch{max-width:280px;order:-1}
+  .nums,.g4{grid-template-columns:repeat(2,1fr)}
+  .cols,.svc,.g3{grid-template-columns:1fr}
+  .case{padding:26px}
+  section{padding:64px 0}
+}
+@media(max-width:480px){.g4{grid-template-columns:repeat(2,1fr)}.nums{grid-template-columns:1fr}}
+
+.hero .chips{margin-bottom:18px}
+.hero .chips span{background:var(--cream);border:1px solid var(--lav2)}
+.nums.flat{margin-top:0}
+.quote{background:var(--lav);border-radius:24px;padding:34px;font:600 1.35rem/1.45 var(--serif);color:var(--plum);align-self:start}
+.svc.two{grid-template-columns:repeat(2,1fr)}
+.svc .chips{margin-top:14px}
+.tools{display:flex;flex-wrap:wrap;gap:14px}
+.tool{display:flex;align-items:center;gap:12px;background:var(--cream);border:1px solid var(--lav2);border-radius:16px;padding:12px 20px;font-weight:500;color:var(--plum)}
+.tool i{font:600 1rem var(--serif);font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--lav2);display:grid;place-items:center}
+.sub{color:var(--muted);font-weight:500;margin-bottom:4px}
+.note{font-size:.92rem;color:var(--muted);margin-top:12px}
+.case .cols+.cols{margin-top:26px}
+.tile.r{aspect-ratio:4/5}
+img.tile{cursor:zoom-in}
+dialog.lb{border:0;background:transparent;margin:auto;max-width:92vw;max-height:92vh;padding:0}
+dialog.lb::backdrop{background:rgba(38,38,56,.82)}
+dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
+.links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-weight:500}
+@media(max-width:860px){
+  nav b{display:none}
+  nav ul{display:flex;gap:18px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+  .svc.two{grid-template-columns:1fr}
+}
+
+.offer{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.offer article{background:var(--cream);border:1px solid var(--lav2);border-top:4px solid var(--lav3);border-radius:20px;padding:28px 30px}
+.offer h3{margin-bottom:4px}
+.offer p{color:var(--muted);margin-bottom:18px}
+.offer ul{list-style:none;display:grid;gap:10px}
+.offer li{position:relative;padding-left:26px}
+.offer li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--lav2);border:2px solid var(--lav3)}
+@media(max-width:700px){
+  .offer{grid-template-columns:1fr}
+  .offer article{padding:24px}
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tool{padding:10px 14px;font-size:.95rem}
+}
+
+.cols{align-items:start}
+.about{align-items:start}
+.skills{align-content:start}
+.chips{align-content:flex-start;align-items:flex-start}
+.grid>*{min-width:0}
+.role-list{columns:2;column-gap:36px}
+.role-list li{break-inside:avoid}
+@media(max-width:700px){.role-list{columns:1}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Angelica Arriesgado</b>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">What I do</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Creative work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Angelica <span>Arriesgado</span></h1>
+      <p class="role">Digital Marketing Specialist</p>
+      <p class="pitch">I help businesses strengthen their digital presence through strategic content, creative execution, consistent branding, and organized marketing workflows.</p>
+      <div class="cta">
+        <a class="btn" href="#projects">View My Projects</a>
+        <a class="btn alt" href="#contact">Contact Me</a>
+      </div>
+    </div>
+    <!-- Replace the initials with: <img src="images/angelica.jpg" alt="Angelica Arriesgado"> -->
+    <div class="arch" aria-label="Photo of Angelica Arriesgado">AA</div>
+  </div>
+</header>
+
+<main>
+<section id="performance">
+  <div class="wrap">
+    <h2>Facebook Page performance</h2>
+    <p class="lead">February to November 2026, covering content planning, creative production, publishing, and performance monitoring.</p>
+    <div class="nums flat" aria-label="Facebook Page performance, February to November 2026">
+      <div class="num"><strong>3.0M</strong><small>Total views</small></div>
+      <div class="num"><strong>761.7K</strong><small>People reached</small></div>
+      <div class="num"><strong>641K</strong><small>3-second video views</small></div>
+      <div class="num"><strong>41.4K</strong><small>Content interactions</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt-bg">
+  <div class="wrap about">
+    <div>
+      <h2>Marketing meets creativity and strategy.</h2>
+      <p>I manage social media, develop content strategies, create marketing materials, edit short-form videos, and organize marketing workflows.</p>
+      <p>My approach is simple: create meaningful content, keep the brand consistent, and build organized marketing processes.</p>
+    </div>
+    <div class="skills">
+      <h3>Tools I use</h3>
+      <!-- To use official logos, add an <img> inside each span. -->
+      <div class="chips"><span>Canva</span><span>CapCut</span><span>Meta Business Suite</span><span>Google Sheets</span><span>Google Apps Script</span><span>Gemini</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I do</h2>
+    <div class="offer" style="margin-top:28px">
+      <article>
+        <h3>Social media management</h3>
+        <ul><li>Content planning and calendars</li><li>Scheduling and publishing</li><li>Page management</li><li>Performance reporting</li></ul>
+      </article>
+      <article>
+        <h3>Content and creative</h3>
+        <ul><li>Graphic design</li><li>Short-form video editing</li><li>Product marketing and photography</li><li>Product shoot planning</li></ul>
+      </article>
+      <article>
+        <h3>Branding</h3>
+        <ul><li>Brand visual direction</li><li>Brand consistency</li><li>Marketing materials</li><li>Promotional design</li></ul>
+      </article>
+      <article>
+        <h3>Marketing systems</h3>
+        <ul><li>Lead tracking</li><li>Workflow organization</li><li>Marketing automation and AI-assisted workflows</li><li>Reporting and analytics</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt-bg">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <div style="margin-top:28px">
+    <article class="case">
+      <header>
+        <span class="tag">Project 01</span>
+        <h3>Kitchenware and wholesale brand</h3>
+        <p class="sub">Social media management and content strategy. February to November 2026.</p>
+      </header>
+      <p class="lead" style="margin-bottom:22px">Strengthening the brand’s social media presence, increasing product visibility, and attracting potential wholesale buyers through consistent content.</p>
+      <div class="cols" style="grid-template-columns:1fr;gap:26px">
+        <div><h4>My role</h4><ul class="role-list">
+          <li>Monthly content calendars and posting strategy</li>
+          <li>Promotional graphics and product-focused content</li>
+          <li>Short-form video production and editing</li>
+          <li>Product shoot planning</li>
+          <li>Publishing, performance monitoring, and reports</li>
+        </ul></div>
+        <!-- Replace each placeholder with <img class="tile r" src="images/project1-1.jpg" alt="..."> -->
+        <div class="grid g3"><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <header>
+        <span class="tag">Project 02</span>
+        <h3>Logistics and container trading business</h3>
+        <p class="sub">Branding, marketing organization, and automation. 3 months.</p>
+      </header>
+      <p class="lead" style="margin-bottom:22px">Improving the business’s digital brand presentation and building a more organized marketing foundation.</p>
+      <div class="cols">
+        <div><h4>Branding</h4><ul>
+          <li>Visual branding direction</li>
+          <li>Brand messaging and service presentation</li>
+          <li>Consistent brand identity</li>
+        </ul></div>
+        <div><h4>Campaign planning</h4><ul>
+          <li>Campaign concepts and content priorities</li>
+          <li>Creative materials for Meta platforms</li>
+          <li>Planning and creative direction only</li>
+        </ul></div>
+        <div><h4>Automation</h4><ul>
+          <li>Lead tracking and inquiry structures</li>
+          <li>Marketing workflows and follow-ups</li>
+          <li>AI-assisted workflow concepts</li>
+        </ul></div>
+      </div>
+      <!-- Add branding materials, marketing creatives, or workflow screenshots (sample data only). -->
+      <div class="grid g3" style="margin-top:26px"><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div></div>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Creative work</h2>
+    <p class="lead">Click any image to enlarge it.</p>
+    <div id="gallery"></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let’s work together.</h2>
+    <p>Looking for someone who understands both the creative and strategic side of digital marketing?</p>
+    <div class="cta">
+      <a class="btn" href="mailto:angel4u.creative@gmail.com">Contact Me</a>
+      <a class="btn alt" href="tel:+639202486032">+63 920 2486 032</a>
+    </div>
+    <div class="links">
+      <a href="mailto:angel4u.creative@gmail.com">angel4u.creative@gmail.com</a>
+      <!-- Add when ready: <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a> -->
+      <!-- Add when ready: <a href="https://www.facebook.com/your-profile" target="_blank" rel="noopener">Facebook</a> -->
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Angelica Arriesgado</footer>
+
+<dialog class="lb" id="lb" aria-label="Image preview"><img id="lbimg" alt=""></dialog>
+
+<script>
+/* Add image paths to each list, for example: i:['images/graphic-1.jpg','images/graphic-2.jpg'] */
+const G=[
+ {t:'Social media graphics',i:[]},
+ {t:'Product marketing and promotions',i:[]},
+ {t:'Short-form video content',i:[]},
+ {t:'Branding and campaign creatives',i:[]}
+];
+const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+function openLb(src,alt){lbimg.src=src;lbimg.alt=alt;lb.showModal()}
+lb.addEventListener('click',()=>lb.close());
+const root=document.getElementById('gallery');
+G.forEach(g=>{
+  const d=document.createElement('div');d.className='group';
+  const h=document.createElement('h3');h.textContent=g.t;h.style.marginBottom='14px';
+  const grid=document.createElement('div');grid.className='grid g4';
+  (g.i.length?g.i:[null,null,null,null]).forEach(src=>{
+    if(src){
+      const im=document.createElement('img');im.className='tile r';im.src=src;im.alt=g.t;im.loading='lazy';im.tabIndex=0;
+      im.addEventListener('click',()=>openLb(src,g.t));
+      im.addEventListener('keydown',e=>{if(e.key==='Enter')openLb(src,g.t)});
+      grid.appendChild(im);
+    }else{
+      const ph=document.createElement('div');ph.className='tile r ph';ph.textContent='Add image';grid.appendChild(ph);
+    }
+  });
+  d.append(h,grid);root.appendChild(d);
+});
+</script>
+
+</body>
+</html>
