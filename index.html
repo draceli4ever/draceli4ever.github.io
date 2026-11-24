@@ -94,7 +94,6 @@ nav ul a:hover{color:var(--lav3)}
 .grid{display:grid;gap:18px}
 .g4{grid-template-columns:repeat(4,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
-/* Replace each .ph with <img src="images/your-file.jpg" alt="..."> keeping class="tile" */
 .tile,.ph{border-radius:18px;background:var(--lav);border:1px dashed var(--lav3);display:grid;place-items:center;text-align:center;padding:14px;color:var(--plum);font-size:.92rem;font-weight:500}
 .tile.sq{aspect-ratio:1/1}
 .tile.tall{aspect-ratio:9/16}
@@ -168,6 +167,19 @@ dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
 .role-list{columns:2;column-gap:36px}
 .role-list li{break-inside:avoid}
 @media(max-width:700px){.role-list{columns:1}}
+
+.g2{grid-template-columns:repeat(2,1fr);max-width:560px}
+.case .grid .tile{width:100%}
+@media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)}.g2{max-width:none}}
+@media(max-width:700px){.case .grid.g3{max-width:300px;margin-left:auto;margin-right:auto}}
+
+.vid{position:relative;border-radius:18px;overflow:hidden;background:var(--lav);cursor:pointer}
+.vid.r{aspect-ratio:4/5}.vid.tall{aspect-ratio:9/16}
+.vid video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.vid .play{position:absolute;inset:0;margin:auto;width:54px;height:54px;border-radius:50%;background:rgba(75,47,134,.85)}
+.vid .play::after{content:"";position:absolute;left:21px;top:15px;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+dialog.lb video{display:none;max-width:92vw;max-height:88vh;border-radius:14px;background:#000}
+dialog.lb .x{position:absolute;top:10px;right:10px;z-index:2;background:rgba(255,251,242,.92);color:var(--plum);border:0;border-radius:999px;padding:8px 16px;font:700 .9rem var(--sans);cursor:pointer}
 </style>
 </head>
 <body>
@@ -196,8 +208,8 @@ dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
         <a class="btn alt" href="#contact">Contact Me</a>
       </div>
     </div>
-    <!-- Replace the initials with: <img src="images/angelica.jpg" alt="Angelica Arriesgado"> -->
-    <div class="arch" aria-label="Photo of Angelica Arriesgado">AA</div>
+    <!-- Replace the initials with: <img src="images/angelica.png" alt="Angelica Arriesgado"> -->
+    <div class="arch"><img src="images/angelica.png" alt="Angelica Arriesgado"></div>
   </div>
 </header>
 
@@ -274,7 +286,7 @@ dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
           <li>Publishing, performance monitoring, and reports</li>
         </ul></div>
         <!-- Replace each placeholder with <img class="tile r" src="images/project1-1.jpg" alt="..."> -->
-        <div class="grid g3"><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div></div>
+        <div class="grid g3"><img class="tile r" src="images/calendar-1.png" alt="Content calendar" loading="lazy"><img class="tile r" src="images/campaign-1.png" alt="Campaign plan" loading="lazy"><img class="tile r" src="images/carousel-2.png" alt="Carousel post" loading="lazy"></div>
       </div>
     </article>
 
@@ -303,7 +315,7 @@ dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
         </ul></div>
       </div>
       <!-- Add branding materials, marketing creatives, or workflow screenshots (sample data only). -->
-      <div class="grid g3" style="margin-top:26px"><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div><div class="tile r ph">Add project visual</div></div>
+      <div class="grid g3" style="margin-top:26px"><img class="tile r" src="images/automation-1.png" alt="Delivery rate calculator built with automation" loading="lazy"><img class="tile r" src="images/branding-1.png" alt="Brand kit" loading="lazy"><img class="tile r" src="images/analytic-1.png" alt="Performance report" loading="lazy"></div>
     </article>
     </div>
   </div>
@@ -336,32 +348,48 @@ dialog.lb img{display:block;max-width:92vw;max-height:88vh;border-radius:14px}
 
 <footer>© 2026 Angelica Arriesgado</footer>
 
-<dialog class="lb" id="lb" aria-label="Image preview"><img id="lbimg" alt=""></dialog>
+<dialog class="lb" id="lb" aria-label="Preview"><button class="x" type="button" onclick="document.getElementById('lb').close()">Close</button><img id="lbimg" alt=""><video id="lbvid" controls playsinline></video></dialog>
 
 <script>
-/* Add image paths to each list, for example: i:['images/graphic-1.jpg','images/graphic-2.jpg'] */
+/* Gallery files: images are .png, videos are .mp4. Add or remove file names inside each list. */
 const G=[
- {t:'Social media graphics',i:[]},
- {t:'Product marketing and promotions',i:[]},
- {t:'Short-form video content',i:[]},
- {t:'Branding and campaign creatives',i:[]}
+ {t:'Social media graphics',i:['images/social-media-1.png','images/social-media-2.png','images/social-media-3.png','images/social-media-4.png']},
+ {t:'Product marketing and promotions',i:['images/product-1.png','images/product-2.png','images/creatives-1.mp4','images/creatives-2.mp4']},
+ {t:'Short-form video content',r:'tall',i:['images/short-1.mp4','images/short-2.mp4','images/short-3.mp4','images/short-4.mp4']},
+ {t:'Branding and campaign creatives',r:'tall',i:['images/promotion-1.mp4','images/promotion-2.mp4','images/promotion-3.mp4','images/promotion-4.mp4']}
 ];
-const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
-function openLb(src,alt){lbimg.src=src;lbimg.alt=alt;lb.showModal()}
-lb.addEventListener('click',()=>lb.close());
+const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbvid=document.getElementById('lbvid');
+const isVid=f=>/\.(mp4|webm|mov)$/i.test(f);
+function openLb(src,alt){
+  if(isVid(src)){lbimg.style.display='none';lbvid.style.display='block';lbvid.src=src;lbvid.play().catch(()=>{});}
+  else{lbvid.style.display='none';lbimg.style.display='block';lbimg.src=src;lbimg.alt=alt;}
+  lb.showModal();
+}
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+lb.addEventListener('close',()=>{lbvid.pause();lbvid.removeAttribute('src');lbvid.load()});
 const root=document.getElementById('gallery');
 G.forEach(g=>{
   const d=document.createElement('div');d.className='group';
   const h=document.createElement('h3');h.textContent=g.t;h.style.marginBottom='14px';
-  const grid=document.createElement('div');grid.className='grid g4';
+  const n=g.i.length||4;
+  const grid=document.createElement('div');grid.className='grid gal '+(n===2?'g2':n===3?'g3':'g4');
+  const cls=g.r||'r';
   (g.i.length?g.i:[null,null,null,null]).forEach(src=>{
-    if(src){
-      const im=document.createElement('img');im.className='tile r';im.src=src;im.alt=g.t;im.loading='lazy';im.tabIndex=0;
+    if(!src){
+      const ph=document.createElement('div');ph.className='tile '+cls+' ph';ph.textContent='Add image';grid.appendChild(ph);
+    }else if(isVid(src)){
+      const w=document.createElement('div');w.className='vid '+cls;w.tabIndex=0;w.setAttribute('role','button');w.setAttribute('aria-label','Play video: '+g.t);
+      const v=document.createElement('video');v.src=src+'#t=0.1';v.muted=true;v.playsInline=true;v.preload='metadata';
+      const pl=document.createElement('span');pl.className='play';
+      w.append(v,pl);
+      w.addEventListener('click',()=>openLb(src,g.t));
+      w.addEventListener('keydown',e=>{if(e.key==='Enter')openLb(src,g.t)});
+      grid.appendChild(w);
+    }else{
+      const im=document.createElement('img');im.className='tile '+cls;im.src=src;im.alt=g.t;im.loading='lazy';im.tabIndex=0;
       im.addEventListener('click',()=>openLb(src,g.t));
       im.addEventListener('keydown',e=>{if(e.key==='Enter')openLb(src,g.t)});
       grid.appendChild(im);
-    }else{
-      const ph=document.createElement('div');ph.className='tile r ph';ph.textContent='Add image';grid.appendChild(ph);
     }
   });
   d.append(h,grid);root.appendChild(d);
